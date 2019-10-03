@@ -1,7 +1,7 @@
 #ifndef SINUSOID_H
 #define SINUSOID_H
 
-class Sinusoid
+class Sinusoid   // Logic Layer
 {
 public:
 	Sinusoid(float amplitude=1.0, float frequency = 1.0, float phase=0.0):

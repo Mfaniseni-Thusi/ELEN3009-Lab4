@@ -9,7 +9,7 @@ using std::pair;
 using std::make_pair;
 using std::vector;
 
-class DataPoints
+class DataPoints   // Logic Layer
 {
 public:
 	DataPoints(vector<Point> datapoints):

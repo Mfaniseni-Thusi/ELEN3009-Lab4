@@ -7,7 +7,7 @@
 
 using std::shared_ptr;
 
-class LineStyle
+class LineStyle  // Presentation Layer
 {
 public:
 	LineStyle(Colour colour, shared_ptr<Display> display_ptr);

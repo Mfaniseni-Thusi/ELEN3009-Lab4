@@ -4,14 +4,14 @@
 #include "DataPoints.h"
 #include "Sinusoid.h"
 
-class Sampler
+class Sampler  // Logic Layer
 {
 public:
 	// performs uniform sampling
 	DataPoints generateSamples(const Sinusoid& sine_wave, const Range& range) const;
 
 private:
-	static const int TOTAL_POINTS = 50;
+	static const int TOTAL_POINTS = 5000;
 };
 
 // standalone function for generating data points, a default uniform sampler is provided

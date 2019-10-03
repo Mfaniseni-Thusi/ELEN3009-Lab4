@@ -37,3 +37,5 @@ int main()
 	return 0;
 }
 
+// Sinusoids are not smooth because they are sampled with few points, 
+// to rectify this a sampling factor or TOTAL_POINTS in each sinusoids are increased

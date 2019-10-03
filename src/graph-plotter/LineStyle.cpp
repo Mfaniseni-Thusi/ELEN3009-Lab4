@@ -6,8 +6,3 @@ LineStyle::LineStyle(Colour colour, shared_ptr<Display> display_ptr):
 {
 	if (display_ptr == nullptr) throw "A valid display is required.";
 }
-
-
-
-
-

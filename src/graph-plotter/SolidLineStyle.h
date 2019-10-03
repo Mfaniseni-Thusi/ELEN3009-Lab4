@@ -3,7 +3,7 @@
 
 #include "LineStyle.h"
 
-class SolidLineStyle: public LineStyle
+class SolidLineStyle: public LineStyle  // Presentation Layer
 {
 public:
 	SolidLineStyle(Colour colour, shared_ptr<Display> display_ptr):

@@ -8,7 +8,7 @@
 
 using std::shared_ptr;
 
-class Graph
+class Graph  // Presentation Layer
 {
 public:
 	Graph(shared_ptr<Display> display):

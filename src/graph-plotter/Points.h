@@ -1,13 +1,13 @@
 #ifndef POINTS_H
 #define POINTS_H
 
-struct Point
+struct Point  // Presentation Layer
 {
 	float x;
 	float y;
 };
 
-class PointPair
+class PointPair // Logic Layer
 {
 public:
 	PointPair(Point p1, Point p2):
@@ -23,7 +23,7 @@ private:
 	Point _p2;
 };
 
-class Range
+class Range  // Logic Layer
 {
 public:
 	Range(float start, float end):

@@ -15,7 +15,7 @@ enum class Colour
 // DO NOT MODIFY THE DISPLAY CLASS! 
 // Clients have no knowledge that SFML is in use
 
-class Display
+class Display  // Presentation Layer
 {
 public:
 	Display(int display_width, int display_height);
