@@ -1,7 +1,9 @@
 #ifndef SINUSOID_H
 #define SINUSOID_H
 
-class Sinusoid   // Logic Layer
+#include "Function.h"
+
+class Sinusoid: public Function  // Logic Layer
 {
 public:
 	Sinusoid(float amplitude=1.0, float frequency = 1.0, float phase=0.0):
@@ -10,7 +12,7 @@ public:
 	phase_(phase)
 	{}
 
-	float evaluate(float x) const;
+	virtual float evaluate(float x) const override;
 
 private:
 	float amplitude_;

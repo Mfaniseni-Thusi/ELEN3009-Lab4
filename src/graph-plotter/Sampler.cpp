@@ -1,6 +1,6 @@
 #include "Sampler.h"
 
-DataPoints Sampler::generateSamples(const Sinusoid& sine_wave, const Range& range) const
+DataPoints Sampler::generateSamples(const Function& sine_wave, const Range& range) const
 {
 	// divide by TOTAL_POINTS-1 to ensure that x_max is included in the range as the last point
 	auto increment = range.size()/(TOTAL_POINTS-1);
@@ -19,7 +19,7 @@ DataPoints Sampler::generateSamples(const Sinusoid& sine_wave, const Range& rang
 }
 
 // standalone function generating data points
-DataPoints generateDataPoints(const Sinusoid& sine_wave, const Range& range, const Sampler& sampler)
+DataPoints generateDataPoints(const Function & sine_wave, const Range& range, const Sampler& sampler)
 {
 	auto data_points = DataPoints{sampler.generateSamples(sine_wave, range)};
 	return data_points;

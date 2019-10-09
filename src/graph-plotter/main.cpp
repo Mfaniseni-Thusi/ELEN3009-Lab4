@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include "Sinusoid.h"
+#include "Polynomial.h"
 #include "Sampler.h"
 #include "Display.h"
 #include "SolidLineStyle.h"
@@ -27,9 +28,22 @@ int main()
 	auto sine_function = Sinusoid{amplitude, frequency, phase};
 	auto cosine_function = Sinusoid{amplitude, frequency, phase + PI/2};
 
+// Polynomial coefficients
+	auto a_value = 0.0f;
+	auto b_value = 1.0f;
+	auto c_value = 2.0f;
+	auto d_value = 1.0f;
+	auto polynomial_function = Polynomial{a_value, b_value, c_value, d_value};
+
+// Exponential coefficients
+	auto a_Evalue = 1.0f;
+	auto b_Evalue = 1.5f;
+	auto exponential_function = Exponential{a_Evalue, b_Evalue};
+    
 	// generate range and plot graphs
 	auto range = Range{0, 6*PI};
 	auto solid_red = SolidLineStyle{Colour::Red, display};
+	auto solid_green = SolidLineStyle{Colour::Green, display};
 	graph.plot(generateDataPoints(sine_function, range), solid_red);
 
 	auto solid_blue = SolidLineStyle{Colour::Blue, display};
@@ -37,6 +51,13 @@ int main()
 
 	auto dotted_red = DottedLineStyle{Colour::Red, display};
 	graph.plot(generateDataPoints(sine_function, range), solid_red);
+    
+    range = Range{-3, 1.5};
+	auto polynomial = SolidLineStyle{Colour::Green, display};
+	graph.plot(generateDataPoints(polynomial_function, range), solid_green);
+    
+	auto exponential = SolidLineStyle{Colour::Blue, display};
+	graph.plot(generateDataPoints(exponential_function, range), solid_green);
 	return 0;
 }
 
