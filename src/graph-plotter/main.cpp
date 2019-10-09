@@ -6,7 +6,9 @@
 #include "SolidLineStyle.h"
 #include "DottedLineStyle.h"
 #include "Points.h"
+#include "AbsoluteValue.h"
 #include <memory>
+#include <vector>
 
 using std::shared_ptr;
 using std::make_shared;
@@ -32,13 +34,16 @@ int main()
 	auto a_value = 0.0f;
 	auto b_value = 1.0f;
 	auto c_value = 2.0f;
-	auto d_value = 1.0f;
+	auto d_value = -10.0f;
 	auto polynomial_function = Polynomial{a_value, b_value, c_value, d_value};
 
 // Exponential coefficients
 	auto a_Evalue = 1.0f;
 	auto b_Evalue = 1.5f;
 	auto exponential_function = Exponential{a_Evalue, b_Evalue};
+
+    auto polynomial_fun2 = make_shared<Polynomial>(a_value, b_value, c_value, d_value);
+    auto polyAbsolute = AbsoluteValue{polynomial_fun2};
     
 	// generate range and plot graphs
 	auto range = Range{0, 6*PI};
@@ -50,7 +55,7 @@ int main()
 	graph.plot(generateDataPoints(cosine_function, range), solid_blue);
 
 	auto dotted_red = DottedLineStyle{Colour::Red, display};
-	graph.plot(generateDataPoints(sine_function, range), solid_red);
+	graph.plot(generateDataPoints(sine_function, range), dotted_red);
     
     range = Range{-3, 1.5};
 	auto polynomial = SolidLineStyle{Colour::Green, display};
@@ -58,6 +63,9 @@ int main()
     
 	auto exponential = SolidLineStyle{Colour::Blue, display};
 	graph.plot(generateDataPoints(exponential_function, range), solid_green);
+
+    range = Range{-4, 7};
+	graph.plot(generateDataPoints(polyAbsolute, range), solid_green);
 	return 0;
 }
 

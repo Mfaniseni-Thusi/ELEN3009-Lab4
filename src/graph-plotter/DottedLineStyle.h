@@ -10,6 +10,8 @@ public:
 	  LineStyle(colour, display_ptr)
 	  {}
 	virtual void plotLine(PointPair end_points) override;
+private:
+    bool draw_ = false;
 };
 
 #endif
